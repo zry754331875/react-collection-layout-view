@@ -1,19 +1,28 @@
 const path = require('path');
-const nodeExternals = require('webpack-node-externals');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: './src/index.js',
+  mode: 'production',
+
+  resolve: {
+    extensions: ['.mjs', '.web.js', '.js', '.json', '.web.jsx', '.jsx'],
+  },
+
+  entry: {
+    index: './src/index.js'
+  },
+
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: '[name].js',
+    path: path.resolve(__dirname, "dist"),
     libraryTarget: 'commonjs2'
   },
+
   module: {
-    rules: [
-      {
-        test: /\.js$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
+    rules: [{
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        loader: 'babel-loader?presets[]=env&presets[]=react'
       },
       {
         test: /\.css$/,
@@ -21,5 +30,8 @@ module.exports = {
       }
     ]
   },
-  externals: [nodeExternals()]
-};
+
+  plugins: [
+    new CleanWebpackPlugin(['dist'])
+  ]
+}
