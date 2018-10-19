@@ -21,24 +21,31 @@
     "url": "https://github.com/zry754331875/react-collection-layout-view"
   },
   "scripts": {
+    "start": "webpack-dev-server --mode development",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
   "author": "zry",
   "license": "MIT",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
     "prop-types": "^15.6.2",
-    "react": "^16.5.2"
+    "react-draggable": "^3.0.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
     "clean-webpack-plugin": "^0.1.19",
     "css-loader": "^1.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
     "style-loader": "^0.23.1",
     "webpack": "^4.20.2",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
   }
 }

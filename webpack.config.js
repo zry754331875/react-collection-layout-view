@@ -22,7 +22,7 @@ module.exports = {
     rules: [{
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        loader: 'babel-loader?presets[]=env&presets[]=react'
+        loader: 'babel-loader?presets[]=env&presets[]=react&presets[]=stage-2'
       },
       {
         test: /\.css$/,
