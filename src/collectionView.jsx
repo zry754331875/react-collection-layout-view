@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import Draggable from "react-draggable";
-import { hasColider } from "./utils";
+// import { hasColider } from "./utils";
 
 class CollectionView extends PureComponent {
   constructor(props) {
@@ -22,7 +22,7 @@ class CollectionView extends PureComponent {
             style: {
               ...child.props.style,
               flex: "0 0 auto"
-            },
+            }
           })}
         </Draggable>
       );
@@ -34,31 +34,26 @@ class CollectionView extends PureComponent {
     };
   }
   onStart = (e, data) => {
-    console.log("====================================");
-    console.log("onStart", e, data);
-    console.log("====================================");
-    let collectionIndex = data.node.getAttribute("collectionindex");
+    // console.log("====================================");
+    // console.log("onStart", e, data);
+    // console.log("====================================");
+    // // let collectionIndex = data.node.getAttribute("collectionindex");
 
-    let items = [...this.state.items];
-    
-    items.splice(collectionIndex, 1);
+    // let items = new Set([...this.state.items]);
 
-    this.setState({
-      items: items.map((value,index)=>{
-
-        value.props.children.props.collectionindex = index
-
-        return value
-      })
-    });
+    // items.delete(data.node);
+    // // items.splice(collectionIndex, 1);
+    // this.setState({
+    //   items: items
+    // });
   };
 
   onDrag = (e, data) => {};
 
   onStop = (e, data) => {
-    console.log("====================================");
-    console.log("onStop", e, data);
-    console.log("====================================");
+    // console.log("====================================");
+    // console.log("onStop", e, data);
+    // console.log("====================================");
   };
 
   render() {
