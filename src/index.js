@@ -1,3 +1,3 @@
 import CollectionView from "./collectionView";
-
-export default CollectionView;
+import Cooo from "./cooo";
+export {CollectionView,Cooo} ;

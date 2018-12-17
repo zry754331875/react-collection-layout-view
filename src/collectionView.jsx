@@ -1,7 +1,11 @@
 import React, { PureComponent } from "react";
 import PropTypes from "prop-types";
 import Draggable from "react-draggable";
-// import { hasColider } from "./utils";
+import { hasColider } from "./utils";
+
+import _ from "lodash";
+
+console.log(_.join(["Another", "module", "loaded!"], " "));
 
 class CollectionView extends PureComponent {
   constructor(props) {
@@ -38,9 +42,7 @@ class CollectionView extends PureComponent {
     // console.log("onStart", e, data);
     // console.log("====================================");
     // // let collectionIndex = data.node.getAttribute("collectionindex");
-
     // let items = new Set([...this.state.items]);
-
     // items.delete(data.node);
     // // items.splice(collectionIndex, 1);
     // this.setState({
@@ -58,7 +60,7 @@ class CollectionView extends PureComponent {
 
   render() {
     const { style } = this.props;
-
+    hasColider();
     return (
       <div
         ref={r => (this.container = r)}

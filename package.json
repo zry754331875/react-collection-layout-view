@@ -29,6 +29,7 @@
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "react-draggable": "^3.0.5"
   },
